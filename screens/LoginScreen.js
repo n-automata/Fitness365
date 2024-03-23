@@ -1,39 +1,63 @@
 import React, { useState } from 'react';
-import { View, Text, ImageBackground, StyleSheet, TextInput } from 'react-native';
-import Button from "../components/LoginButton"
+import { View, Text, ImageBackground, StyleSheet, TextInput, Alert } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import Button from "../components/LoginButton";
+import { searchUserCredentials } from "../backend/SearchUser"; 
+import SignUpLink from '../components/SignUpLink';
 
 export default function LoginScreen() {
-  const [text, setText] = useState(''); // Initialize state for TextInput value
+  const navigation = useNavigation();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
-  // Define onChangeText function to handle TextInput changes
-  const onChangeText = (newText) => {
-    setText(newText); // Update state with new TextInput value
+  const handleUsernameChange = (newUsername) => {
+    setUsername(newUsername);
+  };
+
+  const handlePasswordChange = (newPassword) => {
+    setPassword(newPassword);
+  };
+
+  const handleSubmit = async () => {
+    try {
+      const credentialsFound = await searchUserCredentials(username, password);
+      if (credentialsFound) {
+        navigation.navigate('Main', { username }); // Pass username as a parameter
+      } else {
+        Alert.alert('Login Failed', 'Invalid username or password');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      Alert.alert('Error', 'An error occurred while searching for user.');
+    }
   };
 
   return (
     <ImageBackground
-      source={require('../images/login_background.jpeg')} // background image
+      source={require('../images/login_background.jpeg')}
       style={styles.background}
     >
       <View style={styles.container}>
         <Text style={styles.text}>Log In</Text>
         <TextInput
           style={styles.input}
-          onChangeText={onChangeText}
-          value={text}
+          onChangeText={handleUsernameChange}
+          value={username}
           placeholder="Username"
           placeholderTextColor="gray"
         />
         <TextInput
           style={styles.input}
-          onChangeText={onChangeText}
-          value={text}
+          onChangeText={handlePasswordChange}
+          value={password}
           placeholder="Password"
           placeholderTextColor="gray"
+          secureTextEntry={true}
         />
         <View style={styles.buttonContainer}>
-          <Button title="Login" onPress={() => console.log('Login button pressed')} />
+          <Button title="Login" onPress={handleSubmit} />
         </View>
+        <SignUpLink/>
       </View>
     </ImageBackground>
   );
@@ -55,7 +79,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold',
     color: 'black',
-    marginBottom: 20, 
+    marginBottom: 20,
   },
   input: {
     fontSize: 20,
@@ -70,6 +94,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   buttonContainer: {
-    marginTop: 375,
+    marginTop: 365,
   },
 });
