@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 const Header = ({ text, username }) => {
     return (
         <View style={styles.header}>
-            <Text styles={styles.text}>{text} {username}</Text>
+            <Text style={styles.text}>{text} {username}</Text>
         </View>
     );
 }
@@ -12,12 +12,17 @@ export default Header;
 
 const styles = StyleSheet.create({ 
     header: { 
-    backgroundColor: 'orange',
-    height: 100, 
+        backgroundColor: 'orange',
+        height: 100,
+        width: '100%', // Ensure the header covers the entire width
+        justifyContent: 'center', // Center the text vertically
+        alignItems: 'center', // Center the text horizontally
     },
     text: { 
-    fontSize: '20px',
-    fontColor: 'black',
-    paddingLeft: 20,
+        fontFamily: 'Helvetica Neue',
+        fontWeight: 'bold',
+        fontSize: 30,
+        color: 'black',
+        paddingTop: 40,
     },
 });

@@ -19,7 +19,7 @@ export default function SignUpScreen() {
     } else {
       addUserCredentials(username, password);
       Alert.alert('Success', 'Sign-up successful');
-      navigation.navigate('Main');
+      navigation.goBack();
     }
   };
 
