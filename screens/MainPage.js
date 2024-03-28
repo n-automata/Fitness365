@@ -28,12 +28,14 @@ const MainPage = ({ navigation, route }) => {
            value={weight}
            onChange={setWeight}
            placeholder='Enter weight'
+           keyboardType="numeric"
          />
          <TextInput
            style={styles.textInput}
            value={height}
            onChange={setHeight}
            placeholder='Enter height'
+           keyboardType="numeric"
          />
          <TextInput
            style={styles.textInput}
@@ -101,6 +103,7 @@ const MainPage = ({ navigation, route }) => {
      flex: 1,
      justifyContent: 'center',
      alignItems: 'center',
+     marginTop: -15,
   },
  });
  
