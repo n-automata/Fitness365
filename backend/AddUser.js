@@ -10,7 +10,7 @@ export async function addUserCredentials(username, password) {
       userData = JSON.parse(storedData);
     }
 
-    const existingUser = userData.find(user => user.username === username);
+    const existingUser = userData.find(user => user.username === username && user.password === password);
     if (existingUser) {
       console.log('Username already exists.');
       return false;

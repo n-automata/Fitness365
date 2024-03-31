@@ -4,7 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const PointsScreen = ({ route }) => {
   // extracting the params passed from the navigation
-  const { weight, height, duration } = route.params || {};
+  const { weight, distance, duration } = route.params || {};
 
   // state to hold total points
   const [points, setPoints] = useState(0);
@@ -15,15 +15,19 @@ const PointsScreen = ({ route }) => {
   }, []);
 
   useEffect(() => {
-    // calculate points when weight, height, or duration changes
-    const newPoints = calculatePoints(weight, height, duration);
+    // calculate points when weight, distance, or duration changes
+    const newPoints = calculatePoints(weight, distance, duration);
     // update points state to accumulate points
     setPoints(prevPoints => prevPoints + newPoints);
-  }, [weight, height, duration]);
+  }, [weight, distance, duration]);
 
   // function to calculate points using simple formula that multiplies values 
-  const calculatePoints = (weight, height, duration) => {
-    return weight * height * duration || 0;
+  const calculatePoints = (weight, distance, duration) => {
+    if (distance > 1) {
+      return weight * distance * duration;
+    } else {
+      return weight * duration;
+    }
   };
 
   // function to load points from AsyncStorage

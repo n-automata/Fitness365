@@ -8,20 +8,25 @@ const MainPage = ({ navigation, route }) => {
   // extract username from route parameters
   const { username } = route.params || {};
   const [weight, setWeight] = useState('');
-  const [height, setHeight] = useState('');
+  const [distance, setDistance] = useState('');
   const [duration, setDuration] = useState('');
   const [activity, setActivity] = useState('Workout');
+
 
   // send the data to the points and history screen 
 
   const handleEnterPress = () => 
   {
-    if (weight && height && duration) 
+    if (weight && distance && duration) 
     {
       Alert.alert('Success', 'Your data has been submitted successfully.');
-      navigation.navigate('Points', { weight, height, duration });
-      navigation.navigate('History', { weight, height, duration, activity });
+      navigation.navigate('Points', { weight, distance, duration });
+      navigation.navigate('History', { weight, distance, duration, activity });
     } 
+    else if (weight <= 0 ||  duration <= 0) 
+    {
+      Alert.alert('Error', 'Data submitted must be greater than zero.');
+    }
     else 
     {
       Alert.alert('Error', 'Please enter all required information.');
@@ -30,7 +35,6 @@ const MainPage = ({ navigation, route }) => {
 
   return (
     <View style={styles.container}>
-      <Header text="Welcome" username={username} />
       <View style={styles.imageContainer}>
         <Image
           style={styles.mainLogoImage}
@@ -44,21 +48,21 @@ const MainPage = ({ navigation, route }) => {
           style={styles.textInput}
           value={weight}
           onChangeText={setWeight}
-          placeholder="Enter weight"
+          placeholder="Weight(lbs)"
           keyboardType="numeric"
         />
         <TextInput
           style={styles.textInput}
-          value={height}
-          onChangeText={setHeight}
-          placeholder="Enter distance"
+          value={distance}
+          onChangeText={setDistance}
+          placeholder="Distance(km)"
           keyboardType="numeric"
         />
         <TextInput
           style={styles.textInput}
           value={duration}
           onChangeText={setDuration}
-          placeholder="Enter duration"
+          placeholder="Duration(mins)"
           keyboardType="numeric"
         />
         <Picker

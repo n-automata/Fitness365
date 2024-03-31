@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 
 const ExerciseHistoryScreen = ({ route }) => {
-  const { weight, height, duration, activity } = route.params || {};
+  const { weight, distance, duration, activity } = route.params || {};
   const [history, setHistory] = useState([]);
 
   useEffect(() => {
     // Update history when a new entry is received
-    if (weight && height && duration && activity) {
-      setHistory([...history, { weight, height, duration, activity }]);
+    if (weight && distance && duration && activity) {
+      setHistory([...history, { weight, distance, duration, activity }]);
     }
-  }, [weight, height, duration, activity]);
+  }, [weight, distance, duration, activity]);
 
   // Limit the history to 4 latest entries
   const limitedHistory = history.slice(0, 10);
@@ -22,7 +22,7 @@ const ExerciseHistoryScreen = ({ route }) => {
           <View key={index} style={styles.entryContainer}>
             <Text style={styles.label}>Entry {index + 1}</Text>
             <Text style={styles.info}>Weight: {entry.weight}</Text>
-            <Text style={styles.info}>Height: {entry.height}</Text>
+            <Text style={styles.info}>Distance: {entry.distance}</Text>
             <Text style={styles.info}>Duration: {entry.duration} minutes</Text>
             <Text style={styles.info}>Activity: {entry.activity}</Text>
           </View>
