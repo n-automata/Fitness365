@@ -5,18 +5,25 @@ import Header from '../components/Header';
 import EnterButton from '../components/EnterButton';
 
 const MainPage = ({ navigation, route }) => {
-  // Extract username from route parameters
+  // extract username from route parameters
   const { username } = route.params || {};
   const [weight, setWeight] = useState('');
   const [height, setHeight] = useState('');
   const [duration, setDuration] = useState('');
   const [activity, setActivity] = useState('Workout');
 
-  const handleEnterPress = () => {
-    if (weight && height && duration) {
+  // send the data to the points and history screen 
+
+  const handleEnterPress = () => 
+  {
+    if (weight && height && duration) 
+    {
       Alert.alert('Success', 'Your data has been submitted successfully.');
+      navigation.navigate('Points', { weight, height, duration });
       navigation.navigate('History', { weight, height, duration, activity });
-    } else {
+    } 
+    else 
+    {
       Alert.alert('Error', 'Please enter all required information.');
     }
   };
@@ -44,7 +51,7 @@ const MainPage = ({ navigation, route }) => {
           style={styles.textInput}
           value={height}
           onChangeText={setHeight}
-          placeholder="Enter height"
+          placeholder="Enter distance"
           keyboardType="numeric"
         />
         <TextInput
@@ -105,7 +112,7 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     borderWidth: 0.5,
     borderRadius: 30,
-    width: 150,
+    width: 160,
     height: 50,
   },
   pickerMenu: {

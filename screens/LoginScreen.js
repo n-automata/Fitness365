@@ -22,7 +22,7 @@ export default function LoginScreen() {
     try {
       const credentialsFound = await searchUserCredentials(username, password);
       if (credentialsFound) {
-        navigation.navigate('Main', { username }); // Pass username as a parameter
+        navigation.navigate('Main', { username }); // pass username as a parameter
       } else {
         Alert.alert('Login Failed', 'Invalid username or password');
       }
@@ -31,6 +31,8 @@ export default function LoginScreen() {
       Alert.alert('Error', 'An error occurred while searching for user.');
     }
   };
+
+  // include the background image and username/password fields for logging in 
 
   return (
     <ImageBackground

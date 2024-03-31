@@ -11,6 +11,10 @@ export default function SignUpScreen() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
+// hanfle the sign up 
+// ensures that all fields are entered 
+// gives an alert when sign up is successful 
+
   const handleSignUp = () => {
     if (username.trim() === '' || password.trim() === '' || confirmPassword.trim() === '') {
       Alert.alert('Error', 'Please fill in all fields');
