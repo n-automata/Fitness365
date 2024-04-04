@@ -20,6 +20,9 @@ Run ```npm start``` or ```npx expo start``` to start the application locally.
 To use the application on your mobile device, ensure you have Expo Go installed. You can download Expo Go from your device's app store.
 Note: For detailed instructions on installing Expo Go and running the application on your mobile device, please refer to the official Expo documentation.
 
+## Technologies Used:
+JavaScript, React Native, Expo Go, Visual Studio Code
+
 ## Contributing:
 We welcome contributions from the community to help improve Fitness365. If you encounter any bugs, have feature requests, or would like to contribute code, please feel free to submit a pull request or open an issue on our GitHub repository.
 
