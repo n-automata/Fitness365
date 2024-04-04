@@ -18,7 +18,13 @@ const PointsScreen = ({ route }) => {
     // calculate points when weight, distance, or duration changes
     const newPoints = calculatePoints(weight, distance, duration);
     // update points state to accumulate points
-    setPoints(prevPoints => prevPoints + newPoints);
+    setPoints(prevPoints => {
+      if (typeof prevPoints === 'number' && !isNaN(prevPoints)) {
+        return prevPoints + newPoints;
+      } else {
+        return newPoints;
+      }
+    });
   }, [weight, distance, duration]);
 
   // function to calculate points using simple formula that multiplies values 
