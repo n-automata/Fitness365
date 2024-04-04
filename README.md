@@ -10,11 +10,14 @@ Points: Accumulate points for the amount of activities accomplished to redeem pr
 Community Support: Connect with like-minded individuals, share your achievements, and find inspiration from others on their fitness journeys.
 
 ## Screenshots: 
-![image](https://github.com/n-automata/Fitness365/assets/148803386/78767e7c-cd96-4fd9-bd7b-021f5664972c)
-![image](https://github.com/n-automata/Fitness365/assets/148803386/4575cd8a-2423-47c7-9b51-cd4f7bedf5c8)
-![image](https://github.com/n-automata/Fitness365/assets/148803386/de80a847-9aff-43a4-9cf2-96e83a250d7d)
-![image](https://github.com/n-automata/Fitness365/assets/148803386/9e83d9a4-902f-4667-ae85-6e7e530e2533)
-![image](https://github.com/n-automata/Fitness365/assets/148803386/f71a064e-5cae-485d-ba92-26f1cbddd857)
+<p align ="center">
+<img src = "https://github.com/n-automata/Fitness365/assets/148803386/78767e7c-cd96-4fd9-bd7b-021f5664972c" width="300" height ="600">
+<img src = "https://github.com/n-automata/Fitness365/assets/148803386/4575cd8a-2423-47c7-9b51-cd4f7bedf5c8" width="300" height ="600">
+<img src = "https://github.com/n-automata/Fitness365/assets/148803386/de80a847-9aff-43a4-9cf2-96e83a250d7d" width="300" height ="600">
+<img src = "https://github.com/n-automata/Fitness365/assets/148803386/9e83d9a4-902f-4667-ae85-6e7e530e2533" width="300" height ="600">
+<img src = "https://github.com/n-automata/Fitness365/assets/148803386/f71a064e-5cae-485d-ba92-26f1cbddd857" width="300" height ="600">
+</p>
+
 
 
 ## How To Run:
