@@ -9,6 +9,14 @@ Progress Monitoring: Track your progress over time with intuitive charts and gra
 Points: Accumulate points for the amount of activities accomplished to redeem prizes.
 Community Support: Connect with like-minded individuals, share your achievements, and find inspiration from others on their fitness journeys.
 
+## Screenshots: 
+![image](https://github.com/n-automata/Fitness365/assets/148803386/78767e7c-cd96-4fd9-bd7b-021f5664972c)
+![image](https://github.com/n-automata/Fitness365/assets/148803386/4575cd8a-2423-47c7-9b51-cd4f7bedf5c8)
+![image](https://github.com/n-automata/Fitness365/assets/148803386/de80a847-9aff-43a4-9cf2-96e83a250d7d)
+![image](https://github.com/n-automata/Fitness365/assets/148803386/9e83d9a4-902f-4667-ae85-6e7e530e2533)
+![image](https://github.com/n-automata/Fitness365/assets/148803386/f71a064e-5cae-485d-ba92-26f1cbddd857)
+
+
 ## How To Run:
 
 Install Dependencies:
@@ -25,9 +33,6 @@ JavaScript, React Native, Expo Go, Visual Studio Code
 
 ## Contributing:
 We welcome contributions from the community to help improve Fitness365. If you encounter any bugs, have feature requests, or would like to contribute code, please feel free to submit a pull request or open an issue on our GitHub repository.
-
-## License:
-This project is licensed under the MIT License.
 
 ## Contact Us:
 If you have any questions, suggestions, or feedback, please don't hesitate to contact us through here. 
